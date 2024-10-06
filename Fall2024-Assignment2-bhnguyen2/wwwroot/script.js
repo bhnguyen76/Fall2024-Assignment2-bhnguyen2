@@ -31,5 +31,26 @@ function search() {
     apiSearch()
 }
 
+function displayTime() {
+    // Get current time
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const formattedTime = `${hours}:${minutes}`;
+
+    // Load the result into the p element in the time div
+    $("#currentTime").text(formattedTime);
+
+    // Show the dialog
+    $("#time").dialog({
+        modal: true,
+        buttons: {
+            Close: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+}
+
 // Event listeners
 //document.getElementById("searchButton").addEventListener("click", search());
