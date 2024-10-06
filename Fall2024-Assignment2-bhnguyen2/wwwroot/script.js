@@ -7,10 +7,10 @@ function apiSearch() {
     };
 
     $.ajax({
-        url: 'https://MY-API-ENDPOINT/v7.0/search?' + $.param(params),
+        url: 'https://api.bing.microsoft.com/v7.0/search?' + $.param(params),
         type: 'GET',
         headers: {
-            'Ocp-Apim-Subscription-Key': 'MY-API-KEY'
+            'Ocp-Apim-Subscription-Key': 'API-KEY'
         }
     })
         .done(function (data) {
@@ -27,3 +27,9 @@ function apiSearch() {
             alert('error');
         });
 }
+function search() {
+    apiSearch()
+}
+
+// Event listeners
+//document.getElementById("searchButton").addEventListener("click", search());
