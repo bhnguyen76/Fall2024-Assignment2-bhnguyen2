@@ -7,4 +7,9 @@
     <RootNamespace>Fall2024_Assignment2_bhnguyen2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\NewFolder1\" />
+    <Folder Include="wwwroot\NewFolder\" />
+  </ItemGroup>
+
 </Project>
