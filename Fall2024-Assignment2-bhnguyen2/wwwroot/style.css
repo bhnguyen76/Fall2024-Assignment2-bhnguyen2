@@ -1,0 +1,47 @@
+body {
+    background-image: url('images/moon.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    padding: 4px 6px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.title {
+    color: white;
+    margin-bottom: 2px;
+    font-size: 2em; 
+    text-align: center;
+}
+
+.search-bar {
+    width: 600px; 
+    height: 47px; 
+    border-radius: 100px; 
+    padding: 0 20px; 
+    border: 1px solid #ccc; 
+    font-size: 1em; 
+    outline: none; 
+    transition: border-color 0.3s; 
+    margin-bottom: 10px;
+}

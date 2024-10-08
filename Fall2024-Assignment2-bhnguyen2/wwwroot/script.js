@@ -52,5 +52,20 @@ function displayTime() {
     });
 }
 
+function changeBackground() {
+    //array of images
+    const images = [
+        'images/moon.jpg',
+        'images/mountain.jpg',
+        'images/space.jpg',
+        'images/window.jpg'
+    ];
+
+    //Get random image
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+    document.body.style.backgroundImage = `url('${randomImage}')`;
+}
+
 // Event listeners
 //document.getElementById("searchButton").addEventListener("click", search());
