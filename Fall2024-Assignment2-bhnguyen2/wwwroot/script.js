@@ -1,3 +1,4 @@
+let firstResultUrl = '';
 function apiSearch() {
     var params = {
         'q': $('#query').val(),
@@ -17,11 +18,12 @@ function apiSearch() {
             var len = data.webPages.value.length;
             var results = '';
             for (i = 0; i < len; i++) {
+                if (i == 0) firstResultUrl = data.webPages.value[0].url;
                 results += `<p><a href="${data.webPages.value[i].url}">${data.webPages.value[i].name}</a>: ${data.webPages.value[i].snippet}</p>`;
             }
 
             $('#searchResults').html(results);
-            $('#searchResults').dialog();
+            $('#searchResults').show();
         })
         .fail(function () {
             alert('error');
@@ -52,20 +54,22 @@ function displayTime() {
     });
 }
 
+const images = [
+    'url("images/moon.jpg")',
+    'url("images/mountain.jpg")',
+];
+let imageIndex = 0;
 function changeBackground() {
-    //array of images
-    const images = [
-        'images/moon.jpg',
-        'images/mountain.jpg',
-        'images/space.jpg',
-        'images/window.jpg'
-    ];
-
-    //Get random image
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-
-    document.body.style.backgroundImage = `url('${randomImage}')`;
+    imageIndex = (imageIndex + 1) % images.length;
+    document.body.style.backgroundImage = images[imageIndex];
 }
 
+function feelingLucky() {
+    if (firstResultUrl) {
+        window.location.href = firstResultUrl; 
+    } else {
+        alert('Perform a search first.');
+    }
+}
 // Event listeners
 //document.getElementById("searchButton").addEventListener("click", search());
