@@ -5,8 +5,14 @@ body {
     transition: background-image 0.5s ease;
 }
 
+#searchResults {
+    margin-top: 20px; /* Space above results */
+    padding: 10px; /* Padding inside results */
+    color: white; /* Change this to your desired text color */
+}
+
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 
 .container {
